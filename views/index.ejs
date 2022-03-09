@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Resources -->
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="/javascripts/valueChart.js"></script>
+  <script src="/javascripts/lineChart.js"></script>
+  <script>
+    let dataValueChart = [];
+
+    '<% for(let i = 0; i < pessoa.length; i++) { %>'
+    var dataObj = {};
+    dataObj["country"] = '<%= pessoa[i]["country"] %>';
+    dataObj["value"] = parseFloat('<%= pessoa[i]["value"] %>');
+    dataValueChart.push(dataObj);
+    '<% } %>'
+
+    console.log(dataValueChart)
+  </script>
+  <script>
+    let dataLineChart = [];
+
+    '<% for(let i = 0; i < line.length; i++) { %>'
+    var dataObj = {};
+    dataObj["date"] = Date.parse('<%= line[i]["date"] %>');
+    dataObj["value"] = parseFloat('<%= line[i]["value"] %>');
+    dataLineChart.push(dataObj);
+    '<% } %>'
+
+    console.log(dataLineChart);
+  </script>
+</head>
+
+<body>
+  <%- include('header'); -%>
+  <div class="grid">
+    <div class="grid-column">
+      <div id="value-div" class="charts-div"></div>
+    </div>
+    <div class="grid-column">
+      <div id="line-div" class="charts-div"></div>
+    </div>
+  </div>
+</body>
+
+</html>

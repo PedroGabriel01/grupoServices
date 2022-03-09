@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(238,224,201);
+    background: linear-gradient(66deg, rgba(238,224,201,1) 0%, rgba(221,242,254,1) 100%); 
+}
+
+.charts-div {
+    background-color: rgba(66,111,222,.2);
+    border-radius: 15px;
+}
+
+#value-div {
+    width: 100%;
+    height: 500px;
+  }
+
+  #line-div {
+    width: 100%;
+    height: 500px;
+    max-width: 100%
+  }
+
+  #nav-bar {
+      width: 100%;
+      background: rgba(66,111,222,.5);
+      color: white;
+  }
+
+  .grid {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-column {
+      padding: 15px;
+  }
+
+  #grupo-service {
+      padding: 10px;
+      font-size: 15px;
+      font-family: Noto Sans, arial, sans-serif;
+      font-weight: 800;
+  }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Resources -->
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="/javascripts/valueChart.js"></script>
+  <script src="/javascripts/lineChart.js"></script>
+  <script>
+    let data = [];
+
+    '<% for(let i = 0; i < pessoa.length; i++) { %>'
+    var dataObj = {};
+    dataObj["country"] = '<%= pessoa[i]["country"] %>';
+    dataObj["value"] = parseFloat('<%= pessoa[i]["value"] %>');
+    data.push(dataObj);
+    '<% } %>'
+
+    console.log(data)
+  </script>
+</head>
+
+<body>
+  <div id="line-div"></div>
+</body>
+
+</html>
